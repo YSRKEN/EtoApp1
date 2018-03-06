@@ -20,11 +20,17 @@ namespace EtoApp1
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
 		public ReactiveProperty<Image> SampleImage { get; } = new ReactiveProperty<Image>();
+		public ReactiveProperty<string> SampleLabel { get; } = new ReactiveProperty<string>();
 		public ReactiveCommand SampleCommand { get; } = new ReactiveCommand();
+		public ReactiveCommand SampleCommand2 { get; } = new ReactiveCommand();
 		public MainViewModel() {
 			SampleImage.Value = new Bitmap(100, 100, PixelFormat.Format24bppRgb);
+			SampleLabel.Value = "A";
 			SampleCommand.Subscribe(_ => {
 				SampleImage.Value = new Bitmap(100, 100, PixelFormat.Format24bppRgb);
+			});
+			SampleCommand2.Subscribe(_ => {
+				SampleLabel.Value += "B";
 			});
 		}
 	}

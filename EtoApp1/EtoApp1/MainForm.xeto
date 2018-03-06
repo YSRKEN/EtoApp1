@@ -6,7 +6,9 @@
 	ClientSize = "300, 300"
 	>
 	<StackLayout>
-		<Button Text = "Click Me!" Command = "{Binding SampleCommand}"/>
-		<ImageView Image = "{Binding SampleImage.Value}"/>
+		<Button Text = "Click -> Exception1" Command = "{Binding SampleCommand}"/>
+		<ImageView Image = "{Binding SampleImage.Value}" Height="100"/>
+		<Button Text = "Click -> Exception2" Command = "{Binding SampleCommand2}"/>
+		<Label Text ="{Binding SampleLabel.Value}"/>
 	</StackLayout>
 </Form>
