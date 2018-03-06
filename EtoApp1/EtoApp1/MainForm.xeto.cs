@@ -24,10 +24,10 @@ namespace EtoApp1
 		public ReactiveCommand SampleCommand { get; } = new ReactiveCommand();
 		public ReactiveCommand SampleCommand2 { get; } = new ReactiveCommand();
 		public MainViewModel() {
-			SampleImage.Value = new Bitmap(100, 100, PixelFormat.Format24bppRgb);
+			SampleImage.Value = new Bitmap(100, 200, PixelFormat.Format24bppRgb);
 			SampleLabel.Value = "A";
 			SampleCommand.Subscribe(_ => {
-				SampleImage.Value = new Bitmap(100, 100, PixelFormat.Format24bppRgb);
+				SampleImage.Value = new Bitmap(200, 100, PixelFormat.Format24bppRgb);
 			});
 			SampleCommand2.Subscribe(_ => {
 				SampleLabel.Value += "B";
